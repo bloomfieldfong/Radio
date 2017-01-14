@@ -8,6 +8,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
+import javax.swing.JRadioButton;
 
 public class Radio extends JFrame {
 
@@ -91,5 +92,29 @@ public class Radio extends JFrame {
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(238, 372, -80, -76);
 		contentPane.add(layeredPane);
+		
+		JRadioButton radioFM = new JRadioButton("FM");
+		radioFM.setBounds(343, 267, 57, 29);
+		contentPane.add(radioFM);
+		
+		JRadioButton radioAM = new JRadioButton("AM");
+		radioAM.setBounds(238, 267, 57, 29);
+		contentPane.add(radioAM);
+		
+		JButton botonGrabar = new JButton("Grabar Estacion");
+		botonGrabar.setBounds(242, 209, 158, 29);
+		contentPane.add(botonGrabar);
+		
+		JButton botonAnterior = new JButton("Anterior");
+		botonAnterior.setBounds(110, 328, 115, 29);
+		contentPane.add(botonAnterior);
+		
+		JButton btnSiguiente = new JButton("Siguiente");
+		btnSiguiente.setBounds(412, 328, 115, 29);
+		contentPane.add(btnSiguiente);
+		
+		JButton botonEncender = new JButton("Encender/Apagar");
+		botonEncender.setBounds(220, 28, 200, 29);
+		contentPane.add(botonEncender);
 	}
 }
