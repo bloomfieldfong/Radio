@@ -1,3 +1,9 @@
+
+/**
+ * @author Rodrio Juarez 16073 
+ * @author Michelle Blooomfield 16803
+ *
+ */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
