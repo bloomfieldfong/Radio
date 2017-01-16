@@ -24,30 +24,50 @@ public class Radio implements Interfaz {
 	@Override
 	public void Estado() {
 		// TODO Auto-generated method stub
+		if (estado==true){
+			estado=false;
+		}
+		else{
+			estado=true;
+		}
 		
 	}
 
 	@Override
 	public void Frecuencia() {
 		// TODO Auto-generated method stub
+		if (estado == true){
+			if (frecuencia == false){
+				
+			}
+		}
 		
 	}
 
 	@Override
 	public void Guardar() {
 		// TODO Auto-generated method stub
+		if (estado == true){
+			
+		}
 		
 	}
 
 	@Override
 	public void Seleccionar() {
 		// TODO Auto-generated method stub
+		if (estado == true){
+			
+		}
 		
 	}
 
 	@Override
 	public void Cambiar() {
 		// TODO Auto-generated method stub
+		if (estado == true){
+			
+		}
 		
 	}
 }
