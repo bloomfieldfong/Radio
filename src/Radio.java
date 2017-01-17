@@ -7,16 +7,18 @@
 public class Radio implements Interfaz {
 
 	private boolean estado;
-	private float estaciones;
+	private float estacionesAM[];
+	private float estacionesFM[];
 	private float emisoraAM;
 	private float emisoraFM;
 	private boolean frecuencia;
 	
 	public Radio(){
 		estado = true;
-		estaciones = 0;
-		emisoraAM = 0;
-		emisoraFM = 0;
+		estacionesAM = new float[13];
+		estacionesFM= new float [13];
+		emisoraAM = 510;
+		emisoraFM = 88.2f;
 		frecuencia = true;
 		
 	}
@@ -37,33 +39,48 @@ public class Radio implements Interfaz {
 	public void Frecuencia() {
 		// TODO Auto-generated method stub
 		if (estado == true){
-			if (frecuencia == false){
-				
+			if (frecuencia == true ){
+				frecuencia = false;
+			}
+			else {
+				frecuencia = true;
 			}
 		}
 		
 	}
 
 	@Override
-	public void Guardar() {
+	public void Guardar(int pos) {
 		// TODO Auto-generated method stub
 		if (estado == true){
+			if (frecuencia == true){
+				estacionesFM[pos]=emisoraFM;
+			}
+			else{
+				estacionesAM[pos]=emisoraAM;
+			}
 			
 		}
 		
 	}
 
 	@Override
-	public void Seleccionar() {
+	public float Seleccionar(int pos) {
 		// TODO Auto-generated method stub
+		float est=0;
 		if (estado == true){
-			
+			if (frecuencia==true){
+				est= estacionesFM[pos];
+			}
+			else{
+				est= estacionesAM[pos];
+			}
 		}
-		
+		return est;
 	}
 
 	@Override
-	public void Cambiar() {
+	public void Cambiar(boolean cambio) {
 		// TODO Auto-generated method stub
 		if (estado == true){
 			
