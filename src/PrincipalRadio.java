@@ -6,20 +6,18 @@
  */
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 import javax.swing.JRadioButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PrincipalRadio extends JFrame {
 
@@ -42,6 +40,7 @@ public class PrincipalRadio extends JFrame {
 		});
 	}
 
+	Radio rad= new Radio();
 	/**
 	 * Create the frame.
 	 */
@@ -58,73 +57,49 @@ public class PrincipalRadio extends JFrame {
 		boton1.setBounds(110, 92, 57, 29);
 		contentPane.add(boton1);
 		
-		boton1.addActionListener(new MiBotonListener());
-		
 		JButton boton2 = new JButton("2");
 		boton2.setBounds(182, 92, 57, 29);
 		contentPane.add(boton2);
-		
-		boton2.addActionListener(new MiBotonListener());
 		
 		JButton boton3 = new JButton("3");
 		boton3.setBounds(254, 92, 57, 29);
 		contentPane.add(boton3);
 		
-		boton3.addActionListener(new MiBotonListener());
-		
 		JButton boton4 = new JButton("4");
 		boton4.setBounds(326, 92, 57, 29);
 		contentPane.add(boton4);
-		
-		boton4.addActionListener(new MiBotonListener());
 		
 		JButton boton5 = new JButton("5");
 		boton5.setBounds(398, 92, 57, 29);
 		contentPane.add(boton5);
 		
-		boton5.addActionListener(new MiBotonListener());
-		
 		JButton boton6 = new JButton("6");
 		boton6.setBounds(470, 92, 57, 29);
 		contentPane.add(boton6);
-		
-		boton6.addActionListener(new MiBotonListener());
 		
 		JButton boton7 = new JButton("7");
 		boton7.setBounds(110, 150, 57, 29);
 		contentPane.add(boton7);
 		
-		boton7.addActionListener(new MiBotonListener());
-		
 		JButton boton8 = new JButton("8");
 		boton8.setBounds(182, 150, 57, 29);
 		contentPane.add(boton8);
-		
-		boton8.addActionListener(new MiBotonListener());
 		
 		JButton boton9 = new JButton("9");
 		boton9.setBounds(254, 150, 57, 29);
 		contentPane.add(boton9);
 		
-		boton9.addActionListener(new MiBotonListener());
-		
 		JButton boton10 = new JButton("10");
 		boton10.setBounds(326, 150, 57, 29);
 		contentPane.add(boton10);
-		
-		boton10.addActionListener(new MiBotonListener());
 		
 		JButton boton11 = new JButton("11");
 		boton11.setBounds(398, 150, 57, 29);
 		contentPane.add(boton11);
 		
-		boton11.addActionListener(new MiBotonListener());
-		
 		JButton boton12 = new JButton("12");
 		boton12.setBounds(470, 150, 57, 29);
 		contentPane.add(boton12);
-		
-		boton12.addActionListener(new MiBotonListener());
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(238, 372, -80, -76);
@@ -142,42 +117,26 @@ public class PrincipalRadio extends JFrame {
 		botonGrabar.setBounds(242, 209, 158, 29);
 		contentPane.add(botonGrabar);
 		
-		botonGrabar.addActionListener(new MiBotonListener());
-		
 		JButton botonAnterior = new JButton("Anterior");
 		botonAnterior.setBounds(110, 328, 115, 29);
 		contentPane.add(botonAnterior);
-		
-		botonAnterior.addActionListener(new MiBotonListener());
 		
 		JButton btnSiguiente = new JButton("Siguiente");
 		btnSiguiente.setBounds(412, 328, 115, 29);
 		contentPane.add(btnSiguiente);
 		
-		btnSiguiente.addActionListener(new MiBotonListener());
-		
 		JButton botonEncender = new JButton("Encender/Apagar");
+		botonEncender.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				rad.Estado();
+				
+			}
+		});
 		botonEncender.setBounds(220, 28, 200, 29);
 		contentPane.add(botonEncender);
-		
-		botonEncender.addActionListener(new MiBotonListener());
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(199, 246, 216, 50);
 		contentPane.add(panel);
-		
 	}
-	
-	//Inner class, esta clase nos sirve para que nuestros botones funcionen
-	
-	private class MiBotonListener implements ActionListener{	
-		public void actionPerformed(ActionEvent e) {
-			
-			Radio radio = new Radio();
-			
-			
-			
-		}
-		
-		}
 }
