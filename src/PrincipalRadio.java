@@ -82,41 +82,101 @@ public class PrincipalRadio extends JFrame {
 		boton3.setBounds(254, 92, 57, 29);
 		contentPane.add(boton3);
 		
+		boton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=3; 
+			}
+		});
+		
 		JButton boton4 = new JButton("4");
 		boton4.setBounds(326, 92, 57, 29);
 		contentPane.add(boton4);
+		
+		boton4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=4; 
+			}
+		});
 		
 		JButton boton5 = new JButton("5");
 		boton5.setBounds(398, 92, 57, 29);
 		contentPane.add(boton5);
 		
+		boton5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=5; 
+			}
+		});
+		
 		JButton boton6 = new JButton("6");
 		boton6.setBounds(470, 92, 57, 29);
 		contentPane.add(boton6);
+		
+		boton6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=6; 
+			}
+		});
 		
 		JButton boton7 = new JButton("7");
 		boton7.setBounds(110, 150, 57, 29);
 		contentPane.add(boton7);
 		
+		boton7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=7; 
+			}
+		});
+		
 		JButton boton8 = new JButton("8");
 		boton8.setBounds(182, 150, 57, 29);
 		contentPane.add(boton8);
+		
+		boton8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=8; 
+			}
+		});
 		
 		JButton boton9 = new JButton("9");
 		boton9.setBounds(254, 150, 57, 29);
 		contentPane.add(boton9);
 		
+		boton9.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=9; 
+			}
+		});
+		
 		JButton boton10 = new JButton("10");
 		boton10.setBounds(326, 150, 57, 29);
 		contentPane.add(boton10);
+		
+		boton10.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=10; 
+			}
+		});
 		
 		JButton boton11 = new JButton("11");
 		boton11.setBounds(398, 150, 57, 29);
 		contentPane.add(boton11);
 		
+		boton11.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=11; 
+			}
+		});
+		
 		JButton boton12 = new JButton("12");
 		boton12.setBounds(470, 150, 57, 29);
 		contentPane.add(boton12);
+		
+		boton12.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				x=12; 
+			}
+		});
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(238, 372, -80, -76);
