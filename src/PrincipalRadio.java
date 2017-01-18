@@ -54,13 +54,32 @@ public class PrincipalRadio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+	
+		
 		JButton boton1 = new JButton("1");
+		
 		boton1.setBounds(110, 92, 57, 29);
 		contentPane.add(boton1);
+	
+		boton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int x = 0;
+				
+				x=1; 
+			}
+		});
 		
 		JButton boton2 = new JButton("2");
 		boton2.setBounds(182, 92, 57, 29);
 		contentPane.add(boton2);
+		
+		boton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int x = 0;
+				
+				x=2; 
+			}
+		});
 		
 		JButton boton3 = new JButton("3");
 		boton3.setBounds(254, 92, 57, 29);
@@ -118,6 +137,15 @@ public class PrincipalRadio extends JFrame {
 		botonGrabar.setBounds(242, 209, 158, 29);
 		contentPane.add(botonGrabar);
 		
+		botonGrabar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				rad.Guardar(x);
+				
+			}
+		});
+		
+		
+		
 		JButton botonAnterior = new JButton("Anterior");
 		botonAnterior.setBounds(110, 328, 115, 29);
 		contentPane.add(botonAnterior);
@@ -126,7 +154,9 @@ public class PrincipalRadio extends JFrame {
 		btnSiguiente.setBounds(412, 328, 115, 29);
 		contentPane.add(btnSiguiente);
 		
+		
 		JButton botonEncender = new JButton("Encender/Apagar");
+		
 		botonEncender.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				rad.Estado();
@@ -136,12 +166,8 @@ public class PrincipalRadio extends JFrame {
 		botonEncender.setBounds(111, 27, 200, 29);
 		contentPane.add(botonEncender);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(199, 246, 216, 50);
-		contentPane.add(panel);
-		
 		JLabel impresion = new JLabel("");
-		impresion.setBounds(386, 31, 69, 20);
+		impresion.setBounds(357, 27, 139, 29);
 		contentPane.add(impresion);
 	}
 }
