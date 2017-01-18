@@ -41,7 +41,8 @@ public class PrincipalRadio extends JFrame {
 		});
 	}
 
-	Radio rad= new Radio();
+	Interfaz rad= new Radio();
+	int x=0;
 	/**
 	 * Create the frame.
 	 */
@@ -63,8 +64,6 @@ public class PrincipalRadio extends JFrame {
 	
 		boton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = 0;
-				
 				x=1; 
 			}
 		});
@@ -75,8 +74,6 @@ public class PrincipalRadio extends JFrame {
 		
 		boton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				int x = 0;
-				
 				x=2; 
 			}
 		});
