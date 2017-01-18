@@ -18,6 +18,7 @@ import javax.swing.JRadioButton;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class PrincipalRadio extends JFrame {
 
@@ -132,11 +133,15 @@ public class PrincipalRadio extends JFrame {
 				
 			}
 		});
-		botonEncender.setBounds(220, 28, 200, 29);
+		botonEncender.setBounds(111, 27, 200, 29);
 		contentPane.add(botonEncender);
 		
 		JPanel panel = new JPanel();
 		panel.setBounds(199, 246, 216, 50);
 		contentPane.add(panel);
+		
+		JLabel impresion = new JLabel("");
+		impresion.setBounds(386, 31, 69, 20);
+		contentPane.add(impresion);
 	}
 }
