@@ -55,6 +55,7 @@ public class Radio implements Interfaz {
 		if (estado == true){
 			if (frecuencia == true){
 				estacionesFM[pos]=emisoraFM;
+				System.out.println(emisoraFM);
 			}
 			else{
 				estacionesAM[pos]=emisoraAM;
@@ -70,12 +71,12 @@ public class Radio implements Interfaz {
 		float est=0;
 		if (estado == true){
 			if (frecuencia == true){
-				if (pos!=0)
+				if ((pos!=0) && (estacionesFM[pos]!=0))
 				emisoraFM=estacionesFM[pos];
 				est=emisoraFM;
 			}
 			else{
-				if (pos!=0)
+				if (pos!=0 && (estacionesAM[pos]!=0))
 					emisoraAM=estacionesAM[pos];
 				est= emisoraAM;
 			}
