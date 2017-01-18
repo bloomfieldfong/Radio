@@ -40,11 +40,12 @@ public class PrincipalRadio extends JFrame {
 			}
 		});
 	}
-
+ //Declaracion de variables
 	Interfaz rad= new Radio();
 	int x=0;
 	
 	/**
+	 * 
 	 * Create the frame.
 	 */
 	public PrincipalRadio() {
@@ -62,7 +63,7 @@ public class PrincipalRadio extends JFrame {
 		
 		JButton boton1 = new JButton("1");
 		
-		boton1.setBounds(110, 92, 57, 29);
+		boton1.setBounds(99, 92, 57, 29);
 		contentPane.add(boton1);
 	
 		boton1.addActionListener(new ActionListener() {

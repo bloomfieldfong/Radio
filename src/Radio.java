@@ -17,12 +17,12 @@ public class Radio implements Interfaz {
 		estado = true;
 		estacionesAM = new float[13];
 		estacionesFM= new float [13];
-		emisoraAM = 510;
-		emisoraFM = 88.2f;
+		emisoraAM = 530;
+		emisoraFM = 87.2f;
 		frecuencia = true;
 		
 	}
-
+//El metodo estado nos indica la radio esta encendida o apagada
 	@Override
 	public void Estado() {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class Radio implements Interfaz {
 		}
 		
 	}
-
+//El metodo frecuencia nos indica si esta en FM o en AM 
 	@Override
 	public void Frecuencia() {
 		// TODO Auto-generated method stub
@@ -49,6 +49,7 @@ public class Radio implements Interfaz {
 		
 	}
 
+//El metodos Guardar nos deja guardar la estacion en la lista
 	@Override
 	public void Guardar(int pos) {
 		// TODO Auto-generated method stub
@@ -65,6 +66,7 @@ public class Radio implements Interfaz {
 		
 	}
 
+//El metodo seleccionar nos devuelve la estacion que esta guardada
 	@Override
 	public float Seleccionar(int pos) {
 		// TODO Auto-generated method stub
@@ -83,7 +85,9 @@ public class Radio implements Interfaz {
 		}
 		return est;
 	}
-
+	
+//El metodo nos deja cambiar nos 
+	
 	@Override
 	public void Cambiar(boolean cambio) {
 		// TODO Auto-generated method stub
@@ -92,12 +96,12 @@ public class Radio implements Interfaz {
 				if (cambio == true){
 					emisoraFM= emisoraFM + .2f;
 					if (emisoraFM>107.9){
-						emisoraFM= 88.2f;
+						emisoraFM= 87.2f;
 					}
 				}
 				else{
 					emisoraFM= emisoraFM-.2F;
-					if (emisoraFM< 88.2){
+					if (emisoraFM< 87.2){
 						emisoraFM=107.9F;
 					}
 				}
@@ -105,14 +109,14 @@ public class Radio implements Interfaz {
 			else{
 				if(cambio == true){
 					emisoraAM = emisoraAM+10;
-					if (emisoraAM> 5000){
-						emisoraAM=510;
+					if (emisoraAM> 1610){
+						emisoraAM=530;
 					}
 				}
 				else{
 					emisoraAM= emisoraAM-10;
-					if (emisoraAM< 510){
-						emisoraAM= 5000;
+					if (emisoraAM< 530){
+						emisoraAM= 1610;
 					}
 				}
 				

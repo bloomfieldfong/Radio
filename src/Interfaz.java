@@ -5,12 +5,24 @@
  *
  */
 
+
 public interface Interfaz {
 
 	public void Estado();
+	
 	public void Frecuencia();
+	/**
+	 * @param pos
+	 */
 	public void Guardar(int pos);
+	/**
+	 * @param pos
+	 * @return
+	 */
 	public float Seleccionar(int pos);
+	/**
+	 * @param cambio
+	 */
 	public void Cambiar(boolean cambio);
 	
 }
