@@ -43,6 +43,7 @@ public class PrincipalRadio extends JFrame {
 
 	Interfaz rad= new Radio();
 	int x=0;
+	
 	/**
 	 * Create the frame.
 	 */
@@ -55,7 +56,9 @@ public class PrincipalRadio extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-	
+		JLabel impresion = new JLabel("");
+		impresion.setBounds(357, 27, 139, 29);
+		contentPane.add(impresion);
 		
 		JButton boton1 = new JButton("1");
 		
@@ -65,6 +68,7 @@ public class PrincipalRadio extends JFrame {
 		boton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=1; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -75,6 +79,7 @@ public class PrincipalRadio extends JFrame {
 		boton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=2; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -85,6 +90,7 @@ public class PrincipalRadio extends JFrame {
 		boton3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=3; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -95,6 +101,7 @@ public class PrincipalRadio extends JFrame {
 		boton4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=4; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -105,6 +112,7 @@ public class PrincipalRadio extends JFrame {
 		boton5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=5; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -115,6 +123,7 @@ public class PrincipalRadio extends JFrame {
 		boton6.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=6; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -125,6 +134,7 @@ public class PrincipalRadio extends JFrame {
 		boton7.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=7; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -135,6 +145,7 @@ public class PrincipalRadio extends JFrame {
 		boton8.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=8; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -145,6 +156,7 @@ public class PrincipalRadio extends JFrame {
 		boton9.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=9; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -155,6 +167,7 @@ public class PrincipalRadio extends JFrame {
 		boton10.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=10; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -165,6 +178,7 @@ public class PrincipalRadio extends JFrame {
 		boton11.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=11; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
@@ -175,20 +189,13 @@ public class PrincipalRadio extends JFrame {
 		boton12.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				x=12; 
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
 			}
 		});
 		
 		JLayeredPane layeredPane = new JLayeredPane();
 		layeredPane.setBounds(238, 372, -80, -76);
 		contentPane.add(layeredPane);
-		
-		JRadioButton radioFM = new JRadioButton("FM");
-		radioFM.setBounds(343, 267, 57, 29);
-		contentPane.add(radioFM);
-		
-		JRadioButton radioAM = new JRadioButton("AM");
-		radioAM.setBounds(238, 267, 57, 29);
-		contentPane.add(radioAM);
 		
 		JButton botonGrabar = new JButton("Grabar Estacion");
 		botonGrabar.setBounds(242, 209, 158, 29);
@@ -204,10 +211,30 @@ public class PrincipalRadio extends JFrame {
 		
 		
 		JButton botonAnterior = new JButton("Anterior");
+		botonAnterior.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				rad.Cambiar(false);
+				x=0;
+				rad.Seleccionar(x);
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
+				
+			}
+		});
+		
 		botonAnterior.setBounds(110, 328, 115, 29);
 		contentPane.add(botonAnterior);
 		
 		JButton btnSiguiente = new JButton("Siguiente");
+		btnSiguiente.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				rad.Cambiar(true);
+				x=0;
+				impresion.setText(Float.toString(rad.Seleccionar(x)));
+				
+			}
+		});
 		btnSiguiente.setBounds(412, 328, 115, 29);
 		contentPane.add(btnSiguiente);
 		
@@ -223,8 +250,18 @@ public class PrincipalRadio extends JFrame {
 		botonEncender.setBounds(111, 27, 200, 29);
 		contentPane.add(botonEncender);
 		
-		JLabel impresion = new JLabel("");
-		impresion.setBounds(357, 27, 139, 29);
-		contentPane.add(impresion);
+		
+		
+		JButton botonCambio = new JButton("AM/FM");
+		botonCambio.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				rad.Frecuencia();
+			}
+		});
+		botonCambio.setBounds(264, 269, 115, 29);
+		contentPane.add(botonCambio);
+		
+		
 	}
 }
