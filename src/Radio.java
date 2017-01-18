@@ -69,16 +69,15 @@ public class Radio implements Interfaz {
 		// TODO Auto-generated method stub
 		float est=0;
 		if (estado == true){
-			if (frecuencia==true){
-				if (pos==0)
-					est = emisoraFM;
-				est= estacionesFM[pos];
+			if (frecuencia == true){
+				if (pos!=0)
+				emisoraFM=estacionesFM[pos];
+				est=emisoraFM;
 			}
 			else{
-				if (pos==0){
-					est=emisoraAM;
-				}
-				est= estacionesAM[pos];
+				if (pos!=0)
+					emisoraAM=estacionesAM[pos];
+				est= emisoraAM;
 			}
 		}
 		return est;
