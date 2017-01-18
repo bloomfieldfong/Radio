@@ -70,9 +70,14 @@ public class Radio implements Interfaz {
 		float est=0;
 		if (estado == true){
 			if (frecuencia==true){
+				if (pos==0)
+					est = emisoraFM;
 				est= estacionesFM[pos];
 			}
 			else{
+				if (pos==0){
+					est=emisoraAM;
+				}
 				est= estacionesAM[pos];
 			}
 		}
@@ -83,7 +88,35 @@ public class Radio implements Interfaz {
 	public void Cambiar(boolean cambio) {
 		// TODO Auto-generated method stub
 		if (estado == true){
-			
+			if (frecuencia == true){
+				if (cambio == true){
+					emisoraFM= emisoraFM + .2f;
+					if (emisoraFM>107.9){
+						emisoraFM= 88.2f;
+					}
+				}
+				else{
+					emisoraFM= emisoraFM-.2F;
+					if (emisoraFM< 88.2){
+						emisoraFM=107.9F;
+					}
+				}
+			}
+			else{
+				if(cambio == true){
+					emisoraAM = emisoraAM+10;
+					if (emisoraAM> 5000){
+						emisoraAM=510;
+					}
+				}
+				else{
+					emisoraAM= emisoraAM-10;
+					if (emisoraAM< 510){
+						emisoraAM= 5000;
+					}
+				}
+				
+			}
 		}
 		
 	}

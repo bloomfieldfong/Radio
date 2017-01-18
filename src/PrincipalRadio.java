@@ -125,5 +125,9 @@ public class PrincipalRadio extends JFrame {
 		JButton botonEncender = new JButton("Encender/Apagar");
 		botonEncender.setBounds(220, 28, 200, 29);
 		contentPane.add(botonEncender);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(199, 246, 216, 50);
+		contentPane.add(panel);
 	}
 }
