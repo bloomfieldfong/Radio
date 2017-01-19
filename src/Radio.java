@@ -4,7 +4,7 @@
  * @author Michelle Blooomfield 16803
  *
  */
-public class Radio implements Interfaz {
+public class Radio implements IRadio {
 
 	private boolean estado;
 	private float estacionesAM[];
@@ -24,7 +24,7 @@ public class Radio implements Interfaz {
 	}
 
 	@Override
-	public void Estado() {
+	public void estado() {
 		// TODO Auto-generated method stub
 		if (estado==true){
 			estado=false;
@@ -36,7 +36,7 @@ public class Radio implements Interfaz {
 	}
 
 	@Override
-	public void Frecuencia() {
+	public void frecuencia() {
 		// TODO Auto-generated method stub
 		if (estado == true){
 			if (frecuencia == true ){
@@ -50,12 +50,13 @@ public class Radio implements Interfaz {
 	}
 
 	@Override
-	public void Guardar(int pos) {
+	public void guardar(int pos) {
 		// TODO Auto-generated method stub
 		if (estado == true){
 			if (frecuencia == true){
 				estacionesFM[pos]=emisoraFM;
 				System.out.println(emisoraFM);
+				System.out.println(estacionesFM[pos]);
 			}
 			else{
 				estacionesAM[pos]=emisoraAM;
@@ -65,24 +66,6 @@ public class Radio implements Interfaz {
 		
 	}
 
-	@Override
-	public float Seleccionar(int pos) {
-		// TODO Auto-generated method stub
-		float est=0;
-		if (estado == true){
-			if (frecuencia == true){
-				if ((pos!=0) && (estacionesFM[pos]!=0))
-				emisoraFM=estacionesFM[pos];
-				est=emisoraFM;
-			}
-			else{
-				if (pos!=0 && (estacionesAM[pos]!=0))
-					emisoraAM=estacionesAM[pos];
-				est= emisoraAM;
-			}
-		}
-		return est;
-	}
 
 	@Override
 	public void Cambiar(boolean cambio) {
@@ -92,12 +75,12 @@ public class Radio implements Interfaz {
 				if (cambio == true){
 					emisoraFM= emisoraFM + .2f;
 					if (emisoraFM>107.9){
-						emisoraFM= 88.2f;
+						emisoraFM= 87.9f;
 					}
 				}
 				else{
 					emisoraFM= emisoraFM-.2F;
-					if (emisoraFM< 88.2){
+					if (emisoraFM< 87.9){
 						emisoraFM=107.9F;
 					}
 				}
@@ -119,5 +102,48 @@ public class Radio implements Interfaz {
 			}
 		}
 		
+	}
+
+	@Override
+	public float seleccionar(int pos) {
+		// TODO Auto-generated method stub
+		if (estado==true){
+			if (frecuencia==true){
+				if (estacionesFM[pos]!=0){
+					emisoraFM=estacionesFM[pos];
+				}
+			}
+			else{
+				if (estacionesAM[pos]!=0){
+					emisoraAM=estacionesAM[pos];	
+				}
+			}
+		}
+		return getEmisora();
+	}
+
+	@Override
+	public boolean getFrecuencias() {
+		// TODO Auto-generated method stub
+		return frecuencia;
+	}
+
+	@Override
+	public boolean getEstado() {
+		// TODO Auto-generated method stub
+		return estado;
+	}
+
+	@Override
+	public float getEmisora() {
+		// TODO Auto-generated method stub
+		float emisora=0;
+		if (frecuencia==true){
+			emisora= emisoraFM;
+		}
+		else{
+			emisora=emisoraAM;
+		}
+		return emisora;
 	}
 }
