@@ -1,4 +1,4 @@
-import junit.framework.TestCase;
+/*import junit.framework.TestCase;
 import sun.tools.jar.resources.jar_it;
 
 public class Prueba extends TestCase {
@@ -13,4 +13,4 @@ public class Prueba extends TestCase {
 		
 	}
 
-}
+}*/
