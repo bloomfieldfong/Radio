@@ -17,12 +17,12 @@ public class Radio implements IRadio {
 		estado = true;
 		estacionesAM = new float[13];
 		estacionesFM= new float [13];
-		emisoraAM = 510;
-		emisoraFM = 88.2f;
+		emisoraAM = 530;
+		emisoraFM = 87.9f;
 		frecuencia = true;
 		
 	}
-
+//Metodo estado sirve para definir el estado en el que estara la radio
 	@Override
 	public void estado() {
 		// TODO Auto-generated method stub
@@ -34,7 +34,7 @@ public class Radio implements IRadio {
 		}
 		
 	}
-
+//Nos indicara la frecuencia en la que esta 
 	@Override
 	public void frecuencia() {
 		// TODO Auto-generated method stub
@@ -48,7 +48,7 @@ public class Radio implements IRadio {
 		}
 		
 	}
-
+//Guardara las estaciones en las que se este posicionado
 	@Override
 	public void guardar(int pos) {
 		// TODO Auto-generated method stub
@@ -66,7 +66,7 @@ public class Radio implements IRadio {
 		
 	}
 
-
+//Cambiara en estado de AM a FM
 	@Override
 	public void Cambiar(boolean cambio) {
 		// TODO Auto-generated method stub
@@ -88,14 +88,14 @@ public class Radio implements IRadio {
 			else{
 				if(cambio == true){
 					emisoraAM = emisoraAM+10;
-					if (emisoraAM> 5000){
-						emisoraAM=510;
+					if (emisoraAM> 1610){
+						emisoraAM=530;
 					}
 				}
 				else{
 					emisoraAM= emisoraAM-10;
-					if (emisoraAM< 510){
-						emisoraAM= 5000;
+					if (emisoraAM< 530){
+						emisoraAM= 1610;
 					}
 				}
 				
@@ -103,7 +103,7 @@ public class Radio implements IRadio {
 		}
 		
 	}
-
+	
 	@Override
 	public float seleccionar(int pos) {
 		// TODO Auto-generated method stub
@@ -121,19 +121,20 @@ public class Radio implements IRadio {
 		}
 		return getEmisora();
 	}
-
+	//Nos devulve la frecuecia en la que esta la radio
 	@Override
 	public boolean getFrecuencias() {
 		// TODO Auto-generated method stub
 		return frecuencia;
 	}
-
+	//Nos devuelve el estado que se escuenta la radio
 	@Override
 	public boolean getEstado() {
 		// TODO Auto-generated method stub
 		return estado;
 	}
 
+	//Nos devuelve el estado de la emisora en la que estamos
 	@Override
 	public float getEmisora() {
 		// TODO Auto-generated method stub
